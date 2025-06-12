@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://drgmvowsm043b"]
+
+[ext_resource type="Shader" uid="uid://7y1f47g7uviu" path="res://source/ShaderPulsating.gdshader" id="1_ob3pf"]
+
+[resource]
+shader = ExtResource("1_ob3pf")
+shader_parameter/pulse_speed = 3.0
