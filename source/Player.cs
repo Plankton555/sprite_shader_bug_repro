@@ -21,11 +21,11 @@ public partial class Player : Area2D
 	{
 		_sprite = GetNode<Sprite2D>("Sprite2D");
 
-		Modulate = Colors.Transparent;
-		// fix this comment
+		// Remove the shadermaterial from the sprite in the Godot editor.
+		// Then, uncomment the two lines below. This will set the shader manually from code after 1.5 seconds.
 
-		//Callable.From(() => InitializeShader()).CallDeferred();
-		InitializeShader();
+		//Modulate = Colors.Transparent;
+		//InitializeShader();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -55,7 +55,7 @@ public partial class Player : Area2D
 
 		await ToSignal(GetTree().CreateTimer(1.5f), SceneTreeTimer.SignalName.Timeout);
 
-		// So... the fucking moment the sprite's shader becomes visible, the glitch happens. Even if it's 1.5 seconds after the shader was set...
+		// So... the moment the sprite's shader becomes visible, the glitch happens. Even if it's 1.5 seconds after the shader was set...
 		Tween tween = CreateTween();
 		tween.TweenProperty(this, "modulate", Colors.White, 1);
 	}
