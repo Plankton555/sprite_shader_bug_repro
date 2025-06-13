@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5gp3f2jbenfm"]
+
+[ext_resource type="Script" uid="uid://d1sgi0buf6t34" path="res://source/main_menu_scene.gd" id="1_278y2"]
+[ext_resource type="PackedScene" path="res://source/GameScene.tscn" id="2_7xwe8"]
+
+[node name="MainMenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_278y2")
+game_scene = ExtResource("2_7xwe8")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartGameButton" type="Button" parent="CenterContainer"]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+theme_type_variation = &"BigButton"
+text = "Start"
+
+[connection signal="pressed" from="CenterContainer/StartGameButton" to="." method="OnStartGameButtonPressed"]

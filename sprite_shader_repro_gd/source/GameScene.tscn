@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://y15ethtlehc"]
+
+[ext_resource type="PackedScene" uid="uid://cpou45fanbhur" path="res://source/Player.tscn" id="1_xr7sb"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039268, 0.0994691, 0.069493, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_xr7sb")]
+position = Vector2(960, 540)
+script = null

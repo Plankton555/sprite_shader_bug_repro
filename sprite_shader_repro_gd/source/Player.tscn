@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpou45fanbhur"]
+
+[ext_resource type="Script" uid="uid://m33q8maiwu8h" path="res://source/player.gd" id="1_5n4br"]
+[ext_resource type="Material" path="res://source/PlayerShaderMaterial.tres" id="2_bi78x"]
+[ext_resource type="Shader" path="res://source/ShaderPulsating.gdshader" id="3_fl34n"]
+[ext_resource type="Texture2D" uid="uid://bboxh07rb53ai" path="res://source/Player.png" id="4_rs27y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bi78x"]
+shader = ExtResource("3_fl34n")
+shader_parameter/pulse_speed = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvpx6"]
+radius = 24.0
+
+[node name="Player" type="Area2D"]
+collision_mask = 14
+script = ExtResource("1_5n4br")
+shader_material = ExtResource("2_bi78x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_bi78x")
+texture = ExtResource("4_rs27y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gvpx6")
