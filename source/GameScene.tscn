@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bofkcddbbbcgd"]
+[gd_scene load_steps=2 format=3 uid="uid://bofkcddbbbcgd"]
 
-[ext_resource type="Script" uid="uid://b5j4qgewkwhrc" path="res://source/GameScene.cs" id="1_5urvy"]
 [ext_resource type="PackedScene" uid="uid://dddi1kyt8und6" path="res://source/Player.tscn" id="1_xr7sb"]
 
 [node name="GameScene" type="Node2D"]
-script = ExtResource("1_5urvy")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15

@@ -1,5 +1,4 @@
 using Godot;
-using System.Collections.Generic;
 
 public partial class Player : Area2D
 {
@@ -41,11 +40,6 @@ public partial class Player : Area2D
 		Vector2 diff = mousePos - Position;
 		_currentVelocity = diff * _speed;
 		Position += _currentVelocity * (float)delta;
-	}
-
-
-	public void _OnBodyEntered(Node2D body)
-	{
 	}
 
 	private async void InitializeShader()
